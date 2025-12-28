@@ -1,0 +1,221 @@
+/* =====================
+   DESIGN TOKENS
+===================== */
+:root {
+    --bg-main: #f3f4f6;
+    --bg-card: #ffffff;
+    --bg-input: #f9fafb;
+
+    --green-main: #22c55e;
+    --green-dark: #16a34a;
+    --green-soft: #ecfdf5;
+
+    --grey-900: #111827;
+    --grey-700: #374151;
+    --grey-500: #6b7280;
+    --grey-300: #d1d5db;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --shadow-sm: 0 4px 10px rgba(0,0,0,0.06);
+    --shadow-md: 0 15px 35px rgba(0,0,0,0.10);
+}
+
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================
+   BODY
+===================== */
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(160deg, #f9fafb, #e5e7eb);
+    min-height: 100vh;
+    padding: 48px 20px;
+    color: var(--grey-700);
+}
+
+/* =====================
+   HEADINGS
+===================== */
+h1, h2 {
+    text-align: center;
+    font-weight: 600;
+    color: var(--grey-900);
+    letter-spacing: -0.3px;
+}
+
+h1 {
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 22px;
+    color: var(--grey-500);
+}
+
+/* =====================
+   CARD / FORM
+===================== */
+.form-box {
+    background: var(--bg-card);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    padding: 30px 34px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Accent strip */
+.form-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--green-main), var(--green-dark));
+}
+
+/* =====================
+   INPUTS
+===================== */
+input {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 14px 0;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--grey-300);
+    background: var(--bg-input);
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+input::placeholder {
+    color: var(--grey-500);
+}
+
+input:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: var(--green-main);
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+}
+
+/* =====================
+   BUTTON
+===================== */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 18px;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(22, 163, 74, 0.45);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* =====================
+   TABLE
+===================== */
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+/* Header */
+th {
+    background: var(--green-dark);
+    color: #ffffff;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+/* Cells */
+td {
+    padding: 14px;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--grey-300);
+}
+
+/* Zebra rows */
+tr:nth-child(even) td {
+    background: #f9fafb;
+}
+
+/* Hover */
+tr:hover td {
+    background: var(--green-soft);
+}
+
+/* =====================
+   DELETE BUTTON
+===================== */
+.delete-btn {
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    background: #1f2937;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.delete-btn:hover {
+    background: #111827;
+    transform: translateY(-1px);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .form-box {
+        padding: 24px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
